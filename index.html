@@ -225,7 +225,14 @@ const renderAuth=()=>{
   const wrap=h('div',{cls:'auth-wrap'});
   const card=h('div',{cls:'auth-card'});
   const logoWrap=h('div',{cls:'auth-logo'});
- const li = h('img', { src:'logo.png', style:{height:'48px',width:'48px',objectFit:'contain'} });
+const logoWrap = h('div',{cls:'auth-logo'});
+
+const li = document.createElement('img');
+li.src = './logo.png';
+li.style.height = '48px';
+li.style.width = '48px';
+li.style.objectFit = 'contain';
+li.style.display = 'block';
   logoWrap.appendChild(li);
   logoWrap.appendChild(app('div',{},app('div',{style:{fontSize:'22px',fontWeight:'800',color:'var(--text)',letterSpacing:'-.4px'}},'Finova')));
   card.appendChild(logoWrap);
