@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Finova — Invoice & Receipt</title>
@@ -9,11 +8,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --green:#009A49;--green-light:#E6F7EE;--green-mid:#00B857;--green-dark:#007A3A;
-  --bg:#F7F9FC;--white:#fff;--border:#F2F2F2;--text:#000000;--muted:#64748B;
+  --bg:#F7F9FC;--white:#fff;--border:#E2E8F0;--text:#1A2332;--muted:#64748B;
   --danger:#DC2626;--danger-bg:#FEE2E2;
-  --radius:6px;--shadow:0 1px 4px rgba(0,0,0,0.08);
+  --radius:10px;--shadow:0 1px 4px rgba(0,0,0,0.08);
 }
-body{font-family:'Instrument Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
 *:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 button{cursor:pointer;font-family:inherit;font-size:13px;border:none;border-radius:6px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
 input,select,textarea{font-family:inherit;font-size:13px;border:1px solid var(--border);border-radius:6px;padding:8px 10px;width:100%;outline:none;background:var(--white);color:var(--text);transition:border .15s,box-shadow .15s}
@@ -226,14 +225,7 @@ const renderAuth=()=>{
   const wrap=h('div',{cls:'auth-wrap'});
   const card=h('div',{cls:'auth-card'});
   const logoWrap=h('div',{cls:'auth-logo'});
-const logoWrap = h('div',{cls:'auth-logo'});
-
-const li = document.createElement('img');
-li.src = './logo.png';
-li.style.height = '48px';
-li.style.width = '48px';
-li.style.objectFit = 'contain';
-li.style.display = 'block';
+  const li=h('div',{cls:'auth-logo-icon',html:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2.5 2.5L16 9"/></svg>'});
   logoWrap.appendChild(li);
   logoWrap.appendChild(app('div',{},app('div',{style:{fontSize:'22px',fontWeight:'800',color:'var(--text)',letterSpacing:'-.4px'}},'Finova')));
   card.appendChild(logoWrap);
